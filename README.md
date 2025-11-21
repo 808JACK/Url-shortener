@@ -80,4 +80,5 @@ Use Neon Postgres (free tier)
 
 - Backend: Node.js, Express, PostgreSQL
 - Frontend: React, Vite
+- Database: Neon Postgres (free tier)
 - Testing: Jest, Supertest
