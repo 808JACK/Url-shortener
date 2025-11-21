@@ -149,6 +149,9 @@ function Dashboard() {
                   <td>{link.total_clicks}</td>
                   <td>{link.last_clicked ? new Date(link.last_clicked).toLocaleString() : 'Never'}</td>
                   <td className="actions">
+                    <Link to={`/code/${link.code}`}>
+                      <button>Stats</button>
+                    </Link>
                     <button onClick={() => copyToClipboard(link.code)}>Copy</button>
                     <button className="danger" onClick={() => handleDelete(link.code)}>Delete</button>
                   </td>

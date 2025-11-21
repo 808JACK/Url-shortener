@@ -51,8 +51,16 @@ function Stats() {
         </div>
         <div style={{ marginTop: '24px' }}>
           <strong>Short URL:</strong>
-          <div style={{ marginTop: '8px', padding: '12px', background: '#f9fafb', borderRadius: '6px', wordBreak: 'break-all' }}>
-            {import.meta.env.VITE_API_URL || 'http://localhost:3001'}/{link.code}
+          <div style={{ marginTop: '8px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <span style={{ wordBreak: 'break-all' }}>
+              {import.meta.env.VITE_API_URL || 'http://localhost:3001'}/{link.code}
+            </span>
+            <button onClick={() => {
+              navigator.clipboard.writeText(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/${link.code}`);
+              alert('Copied to clipboard!');
+            }}>
+              Copy
+            </button>
           </div>
         </div>
       </div>
