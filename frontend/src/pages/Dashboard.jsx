@@ -108,8 +108,6 @@ function Dashboard() {
           <button type="submit" disabled={submitting}>
             {submitting ? 'Creating...' : 'Create Link'}
           </button>
-          {error && <div className="error">{error}</div>}
-          {success && <div className="success">{success}</div>}
         </form>
       </div>
 
@@ -161,6 +159,10 @@ function Dashboard() {
           </table>
         )}
       </div>
+
+      {/* Toast Notifications */}
+      {error && <div className="toast error-toast">{error}</div>}
+      {success && <div className="toast success-toast">{success}</div>}
     </>
   );
 }

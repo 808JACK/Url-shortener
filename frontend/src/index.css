@@ -167,6 +167,42 @@ th {
   white-space: nowrap;
 }
 
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.success-toast {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.error-toast {
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 12px;
@@ -182,5 +218,12 @@ th {
   
   .truncate {
     max-width: 150px;
+  }
+
+  .toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    padding: 12px 16px;
   }
 }

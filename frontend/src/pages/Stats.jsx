@@ -7,6 +7,7 @@ function Stats() {
   const [link, setLink] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   useEffect(() => {
     fetchStats();
@@ -57,13 +58,17 @@ function Stats() {
             </span>
             <button onClick={() => {
               navigator.clipboard.writeText(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/${link.code}`);
-              alert('Copied to clipboard!');
+              setSuccess('Copied to clipboard!');
+              setTimeout(() => setSuccess(''), 2000);
             }}>
               Copy
             </button>
           </div>
         </div>
       </div>
+
+      {/* Toast Notifications */}
+      {success && <div className="toast success-toast">{success}</div>}
     </div>
   );
 }
